@@ -1,0 +1,14 @@
+/**
+ * Transition
+ *  
+ * @param  $property    [default: all]    Properties to transition
+ * @param  $time        [default: .5s]    Length of transition
+ * @param  $ease        [default: linear] Ease type
+ */
+@mixin transition ($property: all, $time: .5s, $ease: linear) {
+	-webkit-transition: $property $time $ease;
+	   -moz-transition: $property $time $ease;
+	    -ms-transition: $property $time $ease;
+	     -o-transition: $property $time $ease;
+	        transition: $property $time $ease;
+}

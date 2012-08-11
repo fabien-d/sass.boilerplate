@@ -1,0 +1,10 @@
+// Reset/Normalize
+@import "normalize/_normalize.scss";
+// Import all mixins
+@import "mixins/_animate.scss";
+@import "mixins/_design.scss";
+
+// Set global variables
+$font       : Arial, Helvetica, sans-serif;
+$fontSize   : 14px;
+$lineHeight : 1.5;
