@@ -1,14 +1,22 @@
 /**
  * Transition
- *  
- * @param  $property    [default: all]    Properties to transition
- * @param  $time        [default: .5s]    Length of transition
- * @param  $ease        [default: linear] Ease type
+ * Multiple transition must be wrapped in braces
+ * 
+ * <code>
+ * @include transition(all 1s linear);
+ * @include transition((color 1s linear, opacity 1s linear));
+ * </code>
+ * 
+ * @param  $list    [default: all 1s linear] List of transitions
  */
-@mixin transition ($property: all, $time: .5s, $ease: linear) {
-	-webkit-transition: $property $time $ease;
-	   -moz-transition: $property $time $ease;
-	    -ms-transition: $property $time $ease;
-	     -o-transition: $property $time $ease;
-	        transition: $property $time $ease;
+@mixin transition ($list: all 1s linear) {
+	// which prefix to append to the property
+	$webkit : true;
+	$moz    : true;
+	$ms     : true;
+	$o      : true;
+	$spec   : true;
+
+	// set prefix
+	@include prefix(transition, $list, $webkit, $moz, $ms, $o, $spec);
 }
